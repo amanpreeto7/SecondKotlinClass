@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SecondKotlinClass</string>
+    <string name="text1">Text1</string>
+    <string name="text2">Text2</string>
+    <string name="text3">Text3</string>
+    <string name="text4">Text4</string>
+</resources>

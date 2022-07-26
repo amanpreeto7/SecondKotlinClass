@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_launcher_foreground"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:visibility="gone"
+        android:background="@color/purple_200"
+        android:layout_centerInParent="true"
+        android:text="Hello World!" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv1"
+        android:textSize="@dimen/margin_50sp"
+        android:text="@string/text1"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv2"
+        android:textSize="@dimen/margin_50sp"
+        android:text="@string/text2"
+        android:layout_below="@id/tv1"
+        android:layout_alignParentLeft="true"/>
+ <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv3"
+        android:textSize="@dimen/margin_50sp"
+        android:text="@string/text3"
+        android:layout_below="@id/tv2"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+    android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv4"
+        android:textSize="@dimen/margin_50sp"
+        android:text="@string/text4"
+        android:layout_below="@id/tv2"
+        android:layout_toRightOf="@id/tv3"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv5"
+        android:textSize="@dimen/margin_50sp"
+        android:text="@string/text4"
+        android:layout_marginTop="-20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/tv2"
+        android:layout_toRightOf="@id/tv4"/>
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:text="Switch" />
+
+</RelativeLayout>
