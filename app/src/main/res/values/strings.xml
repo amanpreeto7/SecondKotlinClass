@@ -4,4 +4,8 @@
     <string name="text2">Text2</string>
     <string name="text3">Text3</string>
     <string name="text4">Text4</string>
+    <string name="btnMove">Move</string>
+    <string name="login">Login</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
 </resources>

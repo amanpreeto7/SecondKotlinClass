@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+<RelativeLayout android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/ic_launcher_foreground"
     tools:context=".MainActivity">
@@ -42,13 +43,13 @@
         android:layout_alignParentLeft="true"/>
 
     <TextView
-    android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/tv4"
-        android:textSize="@dimen/margin_50sp"
-        android:text="@string/text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/tv2"
-        android:layout_toRightOf="@id/tv3"/>
+        android:layout_toRightOf="@id/tv3"
+        android:text="@string/text4"
+        android:textSize="@dimen/margin_50sp" />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,4 +69,12 @@
         android:layout_alignParentBottom="true"
         android:text="Switch" />
 
+    <Button
+        android:id="@+id/btnMove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv4"
+        android:text="@string/btnMove" />
+
 </RelativeLayout>
+</layout>

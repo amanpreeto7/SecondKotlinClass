@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ConstraintLayout">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/guide_v_10"
+        app:layout_constraintGuide_percent=".10"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/guide_v_90"
+        app:layout_constraintGuide_percent=".90"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".30"
+        android:id="@+id/guide_h_30"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".10"
+        android:id="@+id/guide_h_10"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".70"
+        android:id="@+id/guide_h_70"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="@id/guide_h_30"
+        app:layout_constraintStart_toStartOf="@id/guide_v_10"
+        app:layout_constraintTop_toTopOf="@id/guide_h_10" />
+    <TextView
+        android:id="@+id/tvLblLogin"
+        android:text="@string/login"
+
+        android:textSize="@dimen/margin_20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/guide_h_30"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        />
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintVertical_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="@id/guide_v_10"
+        app:layout_constraintEnd_toEndOf="@id/guide_v_90"
+        app:layout_constraintTop_toBottomOf="@id/tvLblLogin"
+        app:layout_constraintBottom_toTopOf="@+id/etPassword"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textWebPassword"
+        android:hint="@string/enter_password"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintStart_toStartOf="@id/guide_v_10"
+        app:layout_constraintEnd_toEndOf="@id/guide_v_90"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/login"
+        android:id="@+id/btnLogin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
+        app:layout_constraintBottom_toBottomOf="@id/guide_h_70"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
