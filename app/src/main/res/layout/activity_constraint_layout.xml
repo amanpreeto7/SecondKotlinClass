@@ -40,12 +40,39 @@
         app:layout_constraintGuide_percent=".70"
         android:id="@+id/guide_h_70"/>
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <TextView
+        android:id="@+id/ivOne"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:src="@mipmap/ic_launcher"
+        android:text="qwerty"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintBottom_toBottomOf="@id/guide_h_30"
         app:layout_constraintStart_toStartOf="@id/guide_v_10"
+        app:layout_constraintEnd_toStartOf="@id/ivTwo"
+        app:layout_constraintTop_toTopOf="@id/guide_h_10" />
+    <ImageView
+        android:id="@+id/ivTwo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="12345678900"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="@id/guide_h_30"
+        app:layout_constraintStart_toEndOf="@id/ivOne"
+        app:layout_constraintEnd_toStartOf="@id/ivThree"
+        app:layout_constraintTop_toTopOf="@id/guide_h_10" />
+    <TextView
+        android:id="@+id/ivThree"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="qwertyuiopfagjbchdhdhdbh"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintBottom_toBottomOf="@id/guide_h_30"
+        app:layout_constraintStart_toEndOf="@id/ivTwo"
+        app:layout_constraintEnd_toEndOf="@id/guide_v_90"
         app:layout_constraintTop_toTopOf="@id/guide_h_10" />
     <TextView
         android:id="@+id/tvLblLogin"
