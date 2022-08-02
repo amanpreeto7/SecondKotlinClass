@@ -12,17 +12,19 @@ class FragmentActivity : AppCompatActivity() {
     lateinit var activityInterface: ActivityInterface
     lateinit var btn: Button
     lateinit var btnAlertDialog: Button
+    var i = 1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fragment)
         btn = findViewById(R.id.btn)
+
         btnAlertDialog = findViewById(R.id.btnAlertDialog)
         btn.setOnClickListener {
             Snackbar.make(btn,
                 "Snack bar",
                 Snackbar.LENGTH_SHORT)
                 .setAction(resources.getString(R.string.ok)){
-                    activityInterface.ActivityInterface()
+                    activityInterface.ActivityInterface(1, i)
                     Toast.makeText(this, "Toast from snackbar", Toast.LENGTH_SHORT).show()
                     var intent = Intent(this, ConstraintLayout::class.java)
                     startActivity(intent)
@@ -33,9 +35,20 @@ class FragmentActivity : AppCompatActivity() {
         btnAlertDialog.setOnClickListener {
             AlertDialog.Builder(this).apply {
                 setCancelable(false)
-                setTitle("Title")
-                setMessage("Message")
-                    setPositiveButton("OK"){_,_->}
+                setTitle("Select Color")
+                setMessage("Select a color that you want to set as fragment background")
+                    setPositiveButton("Red"){_,_->
+                        activityInterface.ActivityInterface(1, i)
+                        i++
+                    }
+                setNegativeButton("Green"){_,_->
+                        activityInterface.ActivityInterface(2, i)
+                    i++
+                }
+                setNeutralButton("Yellow"){_,_->
+                        activityInterface.ActivityInterface(3, i)
+                    i++
+                }
             }.show()
 //            alertDialog.setCancelable(false)
 //            alertDialog.setTitle("Title")
