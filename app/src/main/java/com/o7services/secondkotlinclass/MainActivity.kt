@@ -11,6 +11,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+
         binding.btnMove.setOnClickListener {
             var intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("value", 1)

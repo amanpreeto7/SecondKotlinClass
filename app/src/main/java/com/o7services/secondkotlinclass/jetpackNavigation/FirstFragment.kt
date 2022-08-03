@@ -32,7 +32,7 @@ class FirstFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
-        navigationActivity = activity as NavigationActivity
+//        navigationActivity = activity as NavigationActivity
     }
 
     override fun onCreateView(
@@ -52,7 +52,7 @@ class FirstFragment : Fragment() {
             var bundle = Bundle()
             bundle.putString("Testing", "Test")
             bundle.putBoolean("bool", true)
-            navigationActivity.navController.navigate(R.id.action_firstFragment_to_secondFragment, bundle)
+           // navigationActivity.navController.navigate(R.id.action_firstFragment_to_secondFragment, bundle)
         }
     }
 
