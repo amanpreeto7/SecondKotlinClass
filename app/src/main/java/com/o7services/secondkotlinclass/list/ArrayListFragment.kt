@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
+import android.widget.ListView
 import androidx.fragment.app.ListFragment
 import com.o7services.secondkotlinclass.R
 import com.o7services.secondkotlinclass.databinding.FragmentArrayListBinding
@@ -48,6 +49,7 @@ class ArrayListFragment : ListFragment() {
         arrayList.add("qwerty 3")
 
         binding.list.adapter = adapter
+        //use this when the Fragment is implemented
         binding.list.setOnItemClickListener { adapterView, view, i, l ->
 
             System.out.println("item clicked ${arrayList[i]}")
@@ -56,6 +58,12 @@ class ArrayListFragment : ListFragment() {
 
         return binding.root
     }
+
+    //use this when the ListFragment is implemented
+//    override fun onListItemClick(l: ListView, v: View, position: Int, id: Long) {
+//        super.onListItemClick(l, v, position, id)
+//        System.out.println("item clicked $position")
+//    }
 
     companion object {
         /**
