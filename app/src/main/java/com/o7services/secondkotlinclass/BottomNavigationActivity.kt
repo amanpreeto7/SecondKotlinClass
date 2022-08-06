@@ -6,7 +6,6 @@ import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-
 class BottomNavigationActivity : AppCompatActivity() {
     lateinit var bottomNav: BottomNavigationView
     lateinit var navController: NavController
