@@ -1,5 +1,6 @@
 package com.o7services.secondkotlinclass.list
 
+import android.app.Dialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.ListView
 import androidx.fragment.app.ListFragment
 import com.o7services.secondkotlinclass.R
 import com.o7services.secondkotlinclass.databinding.FragmentArrayListBinding
+import com.o7services.secondkotlinclass.databinding.LayoutListCustomBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,7 +23,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [ArrayListFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class ArrayListFragment : ListFragment() {
+class ArrayListFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -50,9 +52,44 @@ class ArrayListFragment : ListFragment() {
 
         binding.list.adapter = adapter
         //use this when the Fragment is implemented
-        binding.list.setOnItemClickListener { adapterView, view, i, l ->
+        binding.list.setOnItemClickListener { adapterView, view, position, l ->
 
-            System.out.println("item clicked ${arrayList[i]}")
+            var dialog = Dialog(requireContext())
+            var dialogBinding = LayoutListCustomBinding.inflate(layoutInflater)
+            dialog.setContentView(dialogBinding.root)
+            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            dialog.setCancelable(false)
+            dialogBinding.title.setText("Update Item")
+            dialogBinding.btnOk.setText("Update Item")
+            dialogBinding.etItem.setText(arrayList[position])
+            dialogBinding.btnOk.setOnClickListener {
+                if(dialogBinding.etItem.text.toString().isNullOrEmpty()){
+                    dialogBinding.etItem.error = "Enter item"
+                }else{
+                    arrayList.removeAt(position)
+                    arrayList.add(position,dialogBinding.etItem.text.toString())
+                    dialog.dismiss()
+                }
+            }
+            dialog.show()
+
+        }
+
+        binding.fabAdd.setOnClickListener {
+            var dialog = Dialog(requireContext())
+            var dialogBinding = LayoutListCustomBinding.inflate(layoutInflater)
+            dialog.setContentView(dialogBinding.root)
+            dialog.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+            dialog.setCancelable(false)
+            dialogBinding.btnOk.setOnClickListener {
+                if(dialogBinding.etItem.text.toString().isNullOrEmpty()){
+                    dialogBinding.etItem.error = "Enter item"
+                }else{
+                    arrayList.add(dialogBinding.etItem.text.toString())
+                    dialog.dismiss()
+                }
+            }
+            dialog.show()
 
         }
 

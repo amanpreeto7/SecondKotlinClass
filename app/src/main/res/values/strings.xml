@@ -15,4 +15,6 @@
     <string name="ok">Ok</string>
     <string name="alert_dialog">Alert Dialog</string>
     <string name="custom_dialog">Custom Dialog</string>
+    <string name="get_permission">Get Permission</string>
+    <string name="get_mul_permissions">Get Multiple Permissions</string>
 </resources>
