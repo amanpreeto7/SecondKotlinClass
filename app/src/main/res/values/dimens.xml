@@ -3,4 +3,5 @@
     <dimen name="margin_20dp">20dp</dimen>
     <dimen name="margin_20sp">20sp</dimen>
     <dimen name="margin_50sp">50sp</dimen>
+    <dimen name="margin_30sp">30sp</dimen>
 </resources>
