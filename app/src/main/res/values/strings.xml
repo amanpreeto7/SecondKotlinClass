@@ -17,4 +17,6 @@
     <string name="custom_dialog">Custom Dialog</string>
     <string name="get_permission">Get Permission</string>
     <string name="get_mul_permissions">Get Multiple Permissions</string>
+    <string name="save">Save</string>
+    <string name="remove">Remove</string>
 </resources>
