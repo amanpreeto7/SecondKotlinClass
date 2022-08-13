@@ -15,6 +15,8 @@ class RecyclerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRecyclerBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        array.add(StudentInfo(1,"Abhijeet","123"))
+        array.add(StudentInfo(1,"Japnoor","123"))
         adapter = RecyclerClass(array)
         layoutManager = LinearLayoutManager(this)
         binding.recycler.layoutManager = layoutManager
